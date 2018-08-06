@@ -5,11 +5,18 @@ import AddCard from './AddCard';
 
 const Main = (props) => {
     return (
-        <main>
+        <main id='main'>
             <Switch>
                 <Route 
                     path='/flashcards'
-                    render={(routeProps) => ( <Flashcards testValue={props.testValue} />)}
+                    render={(routeProps) => ( 
+                        <Flashcards 
+                            testValue={props.testValue}
+                            flashcards={props.flashcards}
+                            currentCardIndex={props.currentCardIndex}
+                            onSkipCard={props.onSkipCard}
+                        />
+                    )}
                 ></Route>
                 <Route
                     path='/add-card'
